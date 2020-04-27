@@ -2,7 +2,9 @@
 ## _By: Celeste Field & Chisato Murakami & Joseph Pearce & Nitun Datta_
 ## Description
 
-_This application will take the US currency and display it in various forms of currency from around the world. It will do so by using the API from ExchangeRate-API to gather data to display the output. This application is showing my knowledge of using API calls, parsing data, handling errors, and correclty using webpack to run my application._
+_A website that allows the user to save their favorite TV shows or Movies._
+
+
 
 ## Setup
 
@@ -42,19 +44,28 @@ _No known bugs at this time_
 
 |Behavior|Input|Output|
 | :-----|:-----|:-----|
-| It will take an amount in US currecy and display it in Euros (Version 2020)|$10.00| [€9.26]|
-| It will take amount in US currecy and display it in Pounds (Version 2020) |$10.00|[£8.11]|
-| It will take amount in US currecy and display it in Japanense Yen (Version 2020)|$10.00|[¥1,074.56]|
-| It will take amount in US currecy and display it in Canadian dollars (Version 2020)|$10.00|[$14.11]|
-| It will take amount in US currecy and display it in Mexican Peso (Version 2020) |$10.00|[$249.79]|
-| If there is an error with the request, the application should report an error stating "malformed-request, your input was not valid"|
-| If the query repsonse does not recognize the currency inputed, you should receive a message saying "unknown-code"|
+| **search input and button(click or submit?) input should be string**|
+| **search　by title only to start up?** |
+| **shows the simple results the user searched (use API) , shows only title, year, cast? in a new div or box**|
+| **go back to search button?**|
+| **Save favorite Movie (another button to save)** |
+| **div or box to list saved Movies** |
+| **When the user clicks the title of the saved movies its shows the details below ⬇️** |
+| **The website/app provides older Movie status.(streaming) (use API)** |
+| **The website/app provides current Movie status.(specific time (use API)** |
+| **The website/app provides current Movie status.(where to watch) use zip code? (use API)** |
+| **Recommendation engine (based on Genre & Ratings)"** |
+
+extra specs
+| **search button filtered by genres (comedy, drama, suspense...), cast () ...** |
+
+
 
 ## Legal
 
 #### MIT License
 
-### Copyright (c) 2020 Celeste Field
+### Copyright (c) 2020 Celeste Field Chisato Murakami & Joseph Pearce & Nitun Datta
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

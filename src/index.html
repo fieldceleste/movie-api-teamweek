@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script type="text/javascript" src="bundle.js"></script>
+  
     <title>Movie Favorites</title>
   </head>
   <body>
-    <form id="ping-pong-form">
-      <label for="goal">Enter a number:</label>
-      <input id="goal" type="number">
-      <button type="submit">Submit</button>
-    </form>
-    <ul id="solution"></ul>
-  <script type="text/javascript" src="bundle.js"></script></body>
+    <div class="contanier-fluid">
+      <div class="jumbotron">
+        <h1>Movie Favorites</h1>
+      </div>
+  
+  <body>
+<p>Type in a movie you would like to know about. Then hit the heart to save and watch later!</p>
+    <!-- <form id="movie-selection"> -->
+      <label for="movie">Enter a movie name below:</label>
+      <input id="movie" type="text">
+      <button class="btn-success" id="movie-title">Submit</button>
+    <!-- </form> -->
+    <div id="results">
+      
+    </div>
+    </div>
+  </body>
 </html>

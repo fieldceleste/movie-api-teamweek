@@ -25,7 +25,7 @@ $(document).ready(function () {
           // if (response.results.includes(title)) {
           // console.log("val");
           // }
-          $('#results').append(`<li>${response.results[i].original_title}</li>`);
+          $('#results').append(`<li><a href="#">${response.results[i].original_title}</a></li>`);
           
         }
       } else {

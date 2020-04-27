@@ -26,6 +26,7 @@ $(document).ready(function () {
           // console.log("val");
           // }
           $('#results').append(`<li>${response.results[i].original_title}</li>`);
+          
         }
       } else {
         $('#results').text(`There was an error handling your request.`);

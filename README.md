@@ -42,20 +42,23 @@ _No known bugs at this time_
 
 ## Specs
 
-|Behavior|Input|Output|
-| :-----|:-----|:-----|
-| **search input and button(click or submit?) input should be string**|
-| **search　by title only to start up?** |
-| **shows the simple results the user searched (use API) , shows only title, year, cast? in a new div or box**|
-| **go back to search button?**|
-| **Save favorite Movie (another button to save)** |
-| **div or box to list saved Movies** |
-| **When the user clicks the title of the saved movies its shows the details below ⬇️** |
-| **The website/app provides older Movie status.(streaming) (use API)** |
-| **The website/app provides current Movie status.(specific time (use API)** |
-| **The website/app provides current Movie status.(where to watch) use zip code? (use API)** |
-| **Recommendation engine (based on Genre & Ratings)"** |
 
+| **spec 1: Search input and button(click or submit?) input should be string**|
+| **spec 2: Search　by title only to start up?** |
+| **spec 3: Shows the related results the user searched (use API) ,lists only title in a new div or box**|
+
+| **spec 4: When the user clicks the title of the movie its shows the movie detail page ⬇️** |
+| **spec 5: On the movie detail page user saves Movie as favorite (another button to save)** |
+| **spec 6: div or box to list saved Movies** |
+
+// this is similiar but with "older movies" - could be the same
+| **spec 8: The website/app provides older Movie status.(streaming) (use API)** |
+// *** this might different api, api call
+| **spec 9: The website/app provides streaming Movie status.(specific time (use API)** |
+| **spec 10: The website/app provides streaming Movie status.(where to watch) use zip code? (use API)** |
+| **spec 11: Recommendation engine (based on Genre & Ratings)"** |
+
+| **spec 4b: go back to search button?**|
 extra specs
 | **search button filtered by genres (comedy, drama, suspense...), cast () ...** |
 

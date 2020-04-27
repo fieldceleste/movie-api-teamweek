@@ -25,7 +25,9 @@ $(document).ready(function () {
           // if (response.results.includes(title)) {
           // console.log("val");
           // }
-          $('#results').append(`<li>${response.results[i].original_title}</li>`);
+          $('#results').append(`<li><a href="#">${response.results[i].original_title}</a></li>`);
+          
+          // <a href="https://www.w3schools.com/html/">Visit our HTML tutorial</a>
           
         }
       } else {

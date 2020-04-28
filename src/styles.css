@@ -5,3 +5,6 @@ body {
 #style{
   display:inline;
 }
+ul{
+  list-style-type:none;
+}

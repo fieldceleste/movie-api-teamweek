@@ -15,7 +15,7 @@ $(document).ready(function () {
       getElements(response, title);
       console.log(response.results);
     })();
-
+    
     function getElements(response, title) {
       console.log(response,title);
       if (response) {

@@ -54,12 +54,14 @@ _No known bugs at this time_
 // this is similiar but with "older movies" - could be the same
 | **spec 8: The website/app provides older Movie status.(streaming) (use API)** |
 // *** this might different api, api call
-| **spec 9: The website/app provides Movie images.(use API to get images)** |
-| **spec 10: Need movie id to show images** |
+| **spec 9: The website/app provides Movie images useing API** |
+| **spec 10: Need movie id to show images -> add id on <li>** |
+| **spec 11: <li> should be clickable and shows image when clicked** |
 
-| **spec 11: Recommendation engine (based on Genre & Ratings)"** |
 
-| **spec 4b: go back to search button?**|
+| **spec 12: Recommendation engine (based on Genre & Ratings)"** |
+
+| **spec 13: go back to search button?**|
 extra specs
 | **search button filtered by genres (comedy, drama, suspense...), cast () ...** |
 

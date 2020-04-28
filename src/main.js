@@ -3,68 +3,63 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import $ from 'jquery';
 import { Movies } from './movies-older.js';
-// import { MovieImages } from './movies-image.js';
+import { MovieImages } from './movies-image.js';
 
 
 
 $(document).ready(function () {
-  $('#movie-title').click(function () {
+  $('#movie-results').click(function () {
     let title = $('#movie').val();
+    let movieId = $("movie").val();
     $('#movie').val("");
 
     (async () => {
       let movieTitle = new Movies();
       const response = await movieTitle.getMoviebyTitle(title);
       getElements(response, title);
-      getMovieId(response); 
-      console.log(response.results);
+      movieIdArr(response);
+      
+      console.log(movieId);
     })();
 
     function getElements(response, title) {
-      console.log(response,title);
+      console.log(title);
       if (response) {
-        console.log(response,title);
         for (let i = 0; i < response.results.length; i++) {
-          $('#results').append(`<li id =${response.results[i].id}>${response.results[i].original_title}</li>`);         
+          $('#results-title').append(`<li id =${response.results[i].id}>${response.results[i].original_title}</li>`);
+          $("#results-img").append(`<img src="" alt="photo here">`);
         }
       } else {
         $('#results').text(`There was an error handling your request.`);
       }
     }
-
-    function getMovieId (response){
+    function movieIdArr(response) {
+      let Arr = [];
       if (response) {
-        console.log(response.results[0].id);
+        for (let i = 0; i < response.results.length; i++) {
+          Arr.push(response.results[i].id);
+        }
+        return Arr;
       }
     }
 
-// response.results[i].id = 234897654
+    (async () => {
+      let movieImg = new MovieImages();
+      const imageResponse = await movieImg.getMovieImage(684139);
+      dispImg(imageResponse);
+    })();
+    function dispImg(response) {
+      console.log(response);
+      if (response) {
+        $("#results-img").html(`<img src=${response.backdrops.posters} alt="photo here">`);
+      }
+    }
 
-    // (async () => {
-    //   let movieImage = new MovieImages();
-    //   const response = await movieImage.getMovieImages(movieId);
-    //   getImg(response, movieId);
-    //   // console.log(response.movieId);
-    // })();
-    // function getImg(response, movieId) {
-    //   console.log(response,movieId);
-    //   if (response) {
-    //     console.log(response,movieId);
-    //     for (let i = 0; i < response.movieId.length; i++) {
-    //       // if (response.results.includes(title)) {
-    //       // console.log("val");
-    //       // }
-    //       $('#results').append(`<li>${response.posters}</li>`);         
-    //     }
-    //   } else {
-    //     $('#results').text(`There was an error handling your request.`);
-    //   }
-    // }
+
+    // $('.images').html(`<img src = ${animalResponse.photos[0].src.medium} id = ${id}>`);
 
 
   });
-
-  
 });
 
 

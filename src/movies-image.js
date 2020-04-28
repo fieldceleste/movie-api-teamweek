@@ -14,6 +14,4 @@ export class MovieImages {
   }
   return jsonifiedResponse;
 }
-
 }
-// https://api.themoviedb.org/3/movie/338762/images?api_key=ced83ccd2ee66a3e7d710304f25a076f&language=en-US

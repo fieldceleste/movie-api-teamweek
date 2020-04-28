@@ -25,9 +25,6 @@ $(document).ready(function () {
       if (response) {
         console.log(response,title);
         for (let i = 0; i < response.results.length; i++) {
-          // if (response.results.includes(title)) {
-          // console.log("val");
-          // }
           $('#results').append(`<li>${response.results[i].original_title}</li>`);         
         }
       } else {
@@ -40,7 +37,6 @@ $(document).ready(function () {
         console.log(response.results[0].id);
       }
     }
-
 
 // response.results[i].id = 234897654
 

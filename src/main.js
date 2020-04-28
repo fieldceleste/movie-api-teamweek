@@ -27,6 +27,8 @@ $(document).ready(function () {
           // }
           $('#results').append(`<li><a href="#">${response.results[i].original_title}</a></li>`);
           
+          
+          
         }
       } else {
         $('#results').text(`There was an error handling your request.`);

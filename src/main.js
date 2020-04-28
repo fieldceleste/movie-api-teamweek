@@ -25,7 +25,7 @@ $(document).ready(function () {
       if (response) {
         console.log(response,title);
         for (let i = 0; i < response.results.length; i++) {
-          $('#results').append(`<li>${response.results[i].original_title}</li>`);         
+          $('#results').append(`<li id =${response.results[i].id}>${response.results[i].original_title}</li>`);         
         }
       } else {
         $('#results').text(`There was an error handling your request.`);
@@ -63,6 +63,8 @@ $(document).ready(function () {
 
 
   });
+
+  
 });
 
 

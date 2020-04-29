@@ -6,11 +6,15 @@ body {
   color:white;
   font-size: 20px;
   margin-left:100px; 
+  margin-right:100px;
   font-family:'Bangers';
  
 }
 ul{
   list-style-type:none;
+}
+.jumbotron {
+
 }
 li{
   padding-top: 8px;

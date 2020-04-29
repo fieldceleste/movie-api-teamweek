@@ -16,11 +16,6 @@ $(document).ready(function(){
     $("#fMovieList").toggle();
   });
   
-  //add to the favorite list
-  // $("#details").click(function(){
-  //   $("#details").hide();
-  //   //$("#fMovieList").show();
-  // });
   $("#details").on("click", "button",function(){
     $("#details").hide();
     console.log(currentMovie)
@@ -86,18 +81,17 @@ $(document).ready(function(){
       // let movieInfo;
       if (response) {
         currentMovie = response;
-        console.log(currentMovie);
+        console.log(response.original_title + " ----response.original_title");
         //movieObj.addfavoriteMovieList(response);
         //showFavoriteMovieList(movieObj);
-        
-        let movieInfo =  `<div class="p-2 border d-flex flex-wrap align-content-center bg-light"><br>
-                            <div class="card">
-                              <h5>${response.original_title}</h5>   
-                              <p>Year :${response.release_date}</p>
-                              <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.poster_path}" style="width: 18rem" alt="Card image cap"/>
-                              <button type="button" class="btn btn-primary" id="favoriteMoveiList">Add To Your Favorite Movie List</button>        
-                              </div>
-                          </div>` 
+
+        let movieInfo = `<div class="p-2 border d-flex flex-wrap align-content-center bg-light">
+                <div class="card"><h5>${response.original_title}</h5>   
+                  <p>Year :${response.release_date}</p>
+                  <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.poster_path}" style="width: 18rem" alt="Card image cap"/>
+                  <button type="button" class="btn btn-primary" id="favoriteMoveiList">Add To Your Favorite Movie List</button>        
+                  </div>
+              </div>` 
             $('#details').html(`${movieInfo}`);
         } else {
         $('#details').text(`There was an error handling your request.`);

@@ -5,109 +5,119 @@ import $ from 'jquery';
 import { Movies } from './movies-older.js';
 
 
+let movieObj;
+let currentMovie;
 $(document).ready(function(){
-  console.log("value")
+  movieObj = new Movies();
   attachMovieListeners();
+
+  $("#showFMovieList").click(function(){
+    showFavoriteMovieList(movieObj);
+    $("#fMovieList").toggle();
+  });
+  
+  // add to the favorite list
+  $("#details").click(function(){
+    $("#details").hide();
+    //$("#fMovieList").show();
+  });
+  $("#details").on("click", "button",function(){
+    $("#details").hide();
+    console.log(currentMovie)
+    movieObj.addfavoriteMovieList(currentMovie);
+  });
+
 // show movie list
   $('#movie-title').click(function () {
-=======
-
-$(document).ready(function () {
-  $('#movie-results').click(function () {
-
+    $("#details").html("");
+    $("#results").html("");
+    $("#fMovieList").html("");
+    
+    $("#results").show();
+    
     let title = $('#movie').val();
     $('#movie').val("");
     
     (async () => {
-      let movieTitle = new Movies();
-      const response = await movieTitle.getMoviebyTitle(title);
-
+    //  let movieTitle = new Movies();
+      const response = await movieObj.getMoviebyTitle(title);
       getElements(response);
-      console.log(response.results);
     })();
 
-    // htmlInfo = `<div class="movieDetails p-2 border d-flex flex-wrap align-content-center bg-light"><h5><a href="<p>${response.results[i].original_title}</p></h5>
-    
-    
     function getElements(response) {
-      console.log('line 26 response: ', response)
       if (response) {
         let htmlInfo;
-        for (let i = 0; i < response.results.length; i++) {                                       
+        for (let i = 0; i < response.results.length; i++) { 
+                                               
           htmlInfo = `<div class="p-2 border d-flex flex-wrap align-content-center bg-light">
-                       <h5><span id="${response.results[i].id}">${response.results[i].original_title}</span></h5>
-                        <div class="card">    
-                          <p>Year :${response.results[i].release_date}</p>
-                          <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.results[i].poster_path}" style="width: 7rem" alt="Card image cap">
-                        </div>
-                  
-                     </div>` 
+                  <h5><a id="${response.results[i].id}" href="#">${response.results[i].original_title}</h5>
+                  <div class="card">    
+                    <p>Year :${response.results[i].release_date}</p>
+                    <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.results[i].poster_path}" style="width: 7rem" alt="Card image cap">
+                  </div></a>
+              </div>` 
+             
            $('#results').append(`${htmlInfo}`);
-
-=======
-      getElements(response, title);
-    })();
-
-    function getElements(response) {
-      if (response) {
-        const respResults = response.results;
-        for (let i = 0; i < respResults.length; i++) {
-          $('#results-title').append(`<li id =${respResults[i].id}> <img src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${respResults[i].poster_path}" alt="Sorry! No image of ${respResults[i].original_title}."> ${respResults[i].original_title} </li>`);
-
+        
         }
       } else {
         $('#results').text(`There was an error handling your request.`);
       }
     }
   });
-
-
-
 });
-
-function attachMovieListeners() {
-   console.log("value2"); 
-  $(".movieList").on("click","span", function(event) {
+  
+//get movie details
+  function attachMovieListeners() {
+    
+  $(".movieList").on("click","a", function(event) {
+    $("#results").hide();
+    $("#fMovieList").hide();
+    $("#details").show();
     event.preventDefault();
     
     (async () => {
-      let movieDetails = new Movies();
-      console.log("value1 " + this.id)
-      const response = await movieDetails.displayDetailPage(this.id);
-      
+      const response = await movieObj.displayDetailPage(this.id);
       getDetails(response);
-      console.log(response.original_title + "  val1");
     })();
 
-    //belongs_to_collection.name
-
-    // https://api.themoviedb.org/3/movie/24428?api_key=ced83ccd2ee66a3e7d710304f25a076f
-
+    
     function getDetails(response) {
+      // let movieInfo;
       if (response) {
+        currentMovie = response;
+        console.log(currentMovie);
+        movieObj.addfavoriteMovieList(response);
+        showFavoriteMovieList(movieObj);
         
-        // for (let i = 0; i < response.results.length; i++) {                                       
-           let htmlInfo = `<div class="p-2 border d-flex flex-wrap align-content-center bg-light">
-                       <h5>${response.overview}">${response.original_title}</h5>
-                        <div class="card">    
-                          <p>Year :${response.release_date}</p>
-                          <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.poster_path}" style="width: 7rem" alt="Card image cap">
-                        </div>
-                  
-                     </div>` 
-           $('#results').append(`${htmlInfo}`);
-
-      // }
-      } else {
-        $('#results').text(`There was an error handling your request.`);
+        let movieInfo =  `<div class="p-2 border d-flex flex-wrap align-content-center bg-light"><br>
+                            <div class="card">
+                              <h5>${response.original_title}</h5>   
+                              <p>Year :${response.release_date}</p>
+                              <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.poster_path}" style="width: 18rem" alt="Card image cap"/>
+                              <button type="button" class="btn btn-primary" id="favoriteMoveiList">Add To Your Favorite Movie List</button>        
+                              </div>
+                          </div>` 
+            $('#details').html(`${movieInfo}`);
+        } else {
+        $('#details').text(`There was an error handling your request.`);
       }
     }
-   
-
-    
   })
+  }  
+
+  function showFavoriteMovieList(movieObj){
+    let movieListInfo="";
+    movieObj.favoriteMovieList.forEach(function(movie){
+      
+      movieListInfo =  `<div class="p-2 border d-flex flex-wrap align-content-center bg-light"><br>
+              <div class="card">
+                <h3> Favorite Movei List</h3>
+                <h5>${movie.original_title}</h5>   
+                <p>Year :${movie.release_date}</p>
+                <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${movie.poster_path}" style="width: 18rem" alt="Card image cap">
+              </div>
+            </div>` 
+          $("#fMovieList").append(movieListInfo);
+    });
   }
-
-//https://api.themoviedb.org/3/movie/${response.results[i].id}
-
-

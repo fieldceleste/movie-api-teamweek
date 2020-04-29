@@ -1,3 +1,21 @@
 body {
-  background-color: #7FDBFF;
+  background-image:url("https://www.psdgraphics.com/wp-content/uploads/2009/07/theatre-stage.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:top 100%;
+  justify-content: center;
+  color:white;
+  font-size: 20px;
+ 
+}
+
+#style{
+  display:inline;
+}
+ul{
+  list-style-type:none;
+}
+li{
+  padding-top: 8px;
+  padding-bottom: 8px;
 }

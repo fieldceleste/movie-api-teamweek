@@ -4,17 +4,24 @@ import './styles.css';
 import $ from 'jquery';
 import { Movies } from './movies-older.js';
 
+
 $(document).ready(function(){
   console.log("value")
   attachMovieListeners();
 // show movie list
   $('#movie-title').click(function () {
+=======
+
+$(document).ready(function () {
+  $('#movie-results').click(function () {
+
     let title = $('#movie').val();
     $('#movie').val("");
-
+    
     (async () => {
       let movieTitle = new Movies();
       const response = await movieTitle.getMoviebyTitle(title);
+
       getElements(response);
       console.log(response.results);
     })();
@@ -37,6 +44,16 @@ $(document).ready(function(){
                      </div>` 
            $('#results').append(`${htmlInfo}`);
 
+=======
+      getElements(response, title);
+    })();
+
+    function getElements(response) {
+      if (response) {
+        const respResults = response.results;
+        for (let i = 0; i < respResults.length; i++) {
+          $('#results-title').append(`<li id =${respResults[i].id}> <img src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${respResults[i].poster_path}" alt="Sorry! No image of ${respResults[i].original_title}."> ${respResults[i].original_title} </li>`);
+
         }
       } else {
         $('#results').text(`There was an error handling your request.`);
@@ -47,6 +64,7 @@ $(document).ready(function(){
 
 
 });
+
 function attachMovieListeners() {
    console.log("value2"); 
   $(".movieList").on("click","span", function(event) {
@@ -91,3 +109,5 @@ function attachMovieListeners() {
   }
 
 //https://api.themoviedb.org/3/movie/${response.results[i].id}
+
+

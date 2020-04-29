@@ -1,4 +1,15 @@
 export class Movies {
+
+  constructor(){
+    this.favoriteMovieList = [];
+  }
+  
+  addfavoriteMovieList(response){
+    this.favoriteMovieList.push(response);
+  }
+
+  
+
   async getMoviebyTitle(title) {
     let jsonifiedResponse;
     try {

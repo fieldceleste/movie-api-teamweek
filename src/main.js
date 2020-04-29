@@ -15,8 +15,26 @@ $(document).ready(function () {
     showFavoriteMovieList(movieObj);
     $("#fMovieList").toggle();
   });
+<<<<<<< HEAD
 
   $("#details").on("click", "button", function () {
+=======
+  
+<<<<<<< HEAD
+  //add to the favorite list
+  // $("#details").click(function(){
+  //   $("#details").hide();
+  //   //$("#fMovieList").show();
+  // });
+=======
+  // add to the favorite list
+  $("#details").click(function(){
+    $("#details").hide();
+    //$("#fMovieList").show();
+  });
+>>>>>>> 1a2d8e8d52f8347d99d1b809cc22cd1b6c277949
+  $("#details").on("click", "button",function(){
+>>>>>>> master
     $("#details").hide();
     console.log(currentMovie)
     movieObj.addfavoriteMovieList(currentMovie);
@@ -34,6 +52,14 @@ $(document).ready(function () {
     $('#movie').val("");
 
     (async () => {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      //let movieTitle = new Movies();
+=======
+    //  let movieTitle = new Movies();
+>>>>>>> 1a2d8e8d52f8347d99d1b809cc22cd1b6c277949
+>>>>>>> master
       const response = await movieObj.getMoviebyTitle(title);
       getElements(response);
     })();
@@ -79,6 +105,13 @@ function attachMovieListeners() {
       if (response) {
         currentMovie = response;
         console.log(currentMovie);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        //movieObj.addfavoriteMovieList(response);
+        //showFavoriteMovieList(movieObj);
+
+>>>>>>> master
 
 
         let movieInfo = `<div class="row">
@@ -105,14 +138,38 @@ function attachMovieListeners() {
             </div>
           </div>
         </div>
+<<<<<<< HEAD
       </div>`
         $('#details').html(`${movieInfo}`);
       } else {
+=======
+      </div>` 
+=======
+        movieObj.addfavoriteMovieList(response);
+        showFavoriteMovieList(movieObj);
+        
+        let movieInfo =  `<div class="p-2 border d-flex flex-wrap align-content-center bg-light"><br>
+                            <div class="card">
+                              <h5>${response.original_title}</h5>   
+                              <p>Year :${response.release_date}</p>
+                              <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.poster_path}" style="width: 18rem" alt="Card image cap"/>
+                              <button type="button" class="btn btn-primary" id="favoriteMoveiList">Add To Your Favorite Movie List</button>        
+                              </div>
+                          </div>` 
+>>>>>>> 1a2d8e8d52f8347d99d1b809cc22cd1b6c277949
+            $('#details').html(`${movieInfo}`);
+        } else {
+>>>>>>> master
         $('#details').text(`There was an error handling your request.`);
       }
     }
   })
+<<<<<<< HEAD
 }
+=======
+  }  
+<<<<<<< HEAD
+>>>>>>> master
 
 function showFavoriteMovieList(movieObj) {
   let movieListInfo = "";
@@ -133,4 +190,21 @@ function showFavoriteMovieList(movieObj) {
   
   
 
+=======
+>>>>>>> 1a2d8e8d52f8347d99d1b809cc22cd1b6c277949
 
+  function showFavoriteMovieList(movieObj){
+    let movieListInfo="";
+    movieObj.favoriteMovieList.forEach(function(movie){
+      
+      movieListInfo =  `<div class="p-2 border d-flex flex-wrap align-content-center bg-light"><br>
+              <div class="card">
+                <h3> Favorite Movei List</h3>
+                <h5>${movie.original_title}</h5>   
+                <p>Year :${movie.release_date}</p>
+                <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${movie.poster_path}" style="width: 18rem" alt="Card image cap">
+              </div>
+            </div>` 
+          $("#fMovieList").append(movieListInfo);
+    });
+  }

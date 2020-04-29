@@ -4,7 +4,7 @@ body {
   background-size: cover;
   background-position: 200%;
   color: black;
-  /* color:white; */
+  
   font-size: 20px;
   margin-left:100px;
 
@@ -13,13 +13,15 @@ body {
   margin-right:100px;
   font-family:'Bangers';
  
+  margin-left: 100px;
+  font-family: 'Bangers';
+ 
 }
+
 ul{
   list-style-type:none;
 }
-/* .jumbotron {
 
-} */
 li{
   padding-top: 8px;
   padding-bottom: 8px;

@@ -1,12 +1,11 @@
 body {
   background-image:url("https://www.psdgraphics.com/wp-content/uploads/2009/07/theatre-stage.jpg");
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-size: cover;
-  background-position:top 100%;
-  justify-content: center;
+  background-position: 200%;
   color:white;
   font-size: 20px;
-  margin-left:100px;  margin-
+  margin-left:100px; 
   font-family:'Bangers';
  
 }

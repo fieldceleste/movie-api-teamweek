@@ -41,8 +41,6 @@ export class Movies {
     }
     return jsonifiedResponse;
   }
-
-
   
   // displayDetailPage() {
 
@@ -53,12 +51,9 @@ export class Movies {
   //     htmlInfo = "none";
   //   }
   // }
-
-
-
-
   
 }
+
 
 
 

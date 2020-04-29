@@ -16,11 +16,6 @@ $(document).ready(function(){
     $("#fMovieList").toggle();
   });
   
-  //add to the favorite list
-  // $("#details").click(function(){
-  //   $("#details").hide();
-  //   //$("#fMovieList").show();
-  // });
   $("#details").on("click", "button",function(){
     $("#details").hide();
     console.log(currentMovie)
@@ -112,7 +107,7 @@ $(document).ready(function(){
       
       movieListInfo =  `<div class="p-2 border d-flex flex-wrap align-content-center bg-light"><br>
               <div class="card">
-                <h3> Favorite Movei List</h3>
+                <h3> Favorite Movie List</h3>
                 <h5>${movie.original_title}</h5>   
                 <p>Year :${movie.release_date}</p>
                 <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${movie.poster_path}" style="width: 18rem" alt="Card image cap">

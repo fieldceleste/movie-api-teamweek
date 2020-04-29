@@ -6,37 +6,49 @@ import { Movies } from './movies-older.js';
 
 
 let movieObj;
+let currentMovie;
 $(document).ready(function(){
   movieObj = new Movies();
-  console.log("value")
   attachMovieListeners();
 
   $("#showFMovieList").click(function(){
-    $("#fMovieList").show();
+    showFavoriteMovieList(movieObj);
+    $("#fMovieList").toggle();
   });
   
   //add to the favorite list
-  $("#details").click(function(){
+  // $("#details").click(function(){
+  //   $("#details").hide();
+  //   //$("#fMovieList").show();
+  // });
+  $("#details").on("click", "button",function(){
     $("#details").hide();
-    //$("#fMovieList").show();
+    console.log(currentMovie)
+    movieObj.addfavoriteMovieList(currentMovie);
   });
 
 // show movie list
   $('#movie-title').click(function () {
+    $("#details").html("");
+    $("#results").html("");
+    $("#fMovieList").html("");
+    
+    $("#results").show();
+    
     let title = $('#movie').val();
     $('#movie').val("");
-
+    
     (async () => {
-      let movieTitle = new Movies();
-      const response = await movieTitle.getMoviebyTitle(title);
+      //let movieTitle = new Movies();
+      const response = await movieObj.getMoviebyTitle(title);
       getElements(response);
-      console.log(response.results);
     })();
 
     function getElements(response) {
       if (response) {
         let htmlInfo;
-        for (let i = 0; i < response.results.length; i++) {                                       
+        for (let i = 0; i < response.results.length; i++) { 
+                                               
           htmlInfo = `<div class="p-2 border d-flex flex-wrap align-content-center bg-light">
                   <h5><a id="${response.results[i].id}" href="#">${response.results[i].original_title}</h5>
                   <div class="card">    
@@ -44,8 +56,9 @@ $(document).ready(function(){
                     <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.results[i].poster_path}" style="width: 7rem" alt="Card image cap">
                   </div></a>
               </div>` 
+             
            $('#results').append(`${htmlInfo}`);
-
+        
         }
       } else {
         $('#results').text(`There was an error handling your request.`);
@@ -60,28 +73,28 @@ $(document).ready(function(){
   $(".movieList").on("click","a", function(event) {
     $("#results").hide();
     $("#fMovieList").hide();
+    $("#details").show();
     event.preventDefault();
     
-
     (async () => {
-      //movieObj = new Movies();
-      console.log("value1 " + this.id)
       const response = await movieObj.displayDetailPage(this.id);
       getDetails(response);
-      
     })();
 
+    
     function getDetails(response) {
       // let movieInfo;
       if (response) {
-        movieObj.addfavoriteMovieList(response);
-        showFavoriteMovieList(movieObj);
+        currentMovie = response;
+        console.log(currentMovie);
+        //movieObj.addfavoriteMovieList(response);
+        //showFavoriteMovieList(movieObj);
         
         let movieInfo =  `<div class="p-2 border d-flex flex-wrap align-content-center bg-light"><br>
                             <div class="card">
                               <h5>${response.original_title}</h5>   
                               <p>Year :${response.release_date}</p>
-                              <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.poster_path}" style="width: 18rem" alt="Card image cap">
+                              <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.poster_path}" style="width: 18rem" alt="Card image cap"/>
                               <button type="button" class="btn btn-primary" id="favoriteMoveiList">Add To Your Favorite Movie List</button>        
                               </div>
                           </div>` 
@@ -96,6 +109,7 @@ $(document).ready(function(){
   function showFavoriteMovieList(movieObj){
     let movieListInfo="";
     movieObj.favoriteMovieList.forEach(function(movie){
+      
       movieListInfo =  `<div class="p-2 border d-flex flex-wrap align-content-center bg-light"><br>
               <div class="card">
                 <h3> Favorite Movei List</h3>

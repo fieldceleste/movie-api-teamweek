@@ -1,5 +1,5 @@
 body {
-  background-color: #7FDBFF;
+  background-image:url("https://translate.google.com/?hl=en&tab=iT&authuser=0");
 }
 
 #style{
@@ -7,4 +7,8 @@ body {
 }
 ul{
   list-style-type:none;
+}
+li{
+  padding-top: 8px;
+  padding-bottom: 8px;
 }

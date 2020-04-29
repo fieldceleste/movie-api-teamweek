@@ -5,6 +5,7 @@ import $ from 'jquery';
 import { Movies } from './movies-older.js';
 
 $(document).ready(function(){
+  
   console.log("value")
   attachMovieListeners();
 // show movie list
@@ -19,22 +20,18 @@ $(document).ready(function(){
       console.log(response.results);
     })();
 
-    // htmlInfo = `<div class="movieDetails p-2 border d-flex flex-wrap align-content-center bg-light"><h5><a href="<p>${response.results[i].original_title}</p></h5>
-    
-    
     function getElements(response) {
       console.log('line 26 response: ', response)
       if (response) {
         let htmlInfo;
         for (let i = 0; i < response.results.length; i++) {                                       
           htmlInfo = `<div class="p-2 border d-flex flex-wrap align-content-center bg-light">
-                       <h5><span id="${response.results[i].id}">${response.results[i].original_title}</span></h5>
-                        <div class="card">    
-                          <p>Year :${response.results[i].release_date}</p>
-                          <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.results[i].poster_path}" style="width: 7rem" alt="Card image cap">
-                        </div>
-                  
-                     </div>` 
+                  <h5><a id="${response.results[i].id}" href="#">${response.results[i].original_title}</h5>
+                  <div class="card">    
+                    <p>Year :${response.results[i].release_date}</p>
+                    <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.results[i].poster_path}" style="width: 7rem" alt="Card image cap">
+                  </div></a>
+              </div>` 
            $('#results').append(`${htmlInfo}`);
 
         }
@@ -49,7 +46,8 @@ $(document).ready(function(){
 });
 function attachMovieListeners() {
    console.log("value2"); 
-  $(".movieList").on("click","span", function(event) {
+  $(".movieList").on("click","a", function(event) {
+    $("#results").hide();
     event.preventDefault();
     
     (async () => {
@@ -58,28 +56,27 @@ function attachMovieListeners() {
       const response = await movieDetails.displayDetailPage(this.id);
       
       getDetails(response);
-      console.log(response.original_title + "  val1");
+      
     })();
 
     
 
     function getDetails(response) {
+     // let movieInfo;
       if (response) {
-        
-        // for (let i = 0; i < response.results.length; i++) {                                       
-           let htmlInfo = `<div class="p-2 border d-flex flex-wrap align-content-center bg-light">
-                       <h5>${response.overview}">${response.original_title}</h5>
-                        <div class="card">    
-                          <p>Year :${response.release_date}</p>
-                          <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.poster_path}" style="width: 7rem" alt="Card image cap">
-                        </div>
-                  
-                     </div>` 
-           $('#results').append(`${htmlInfo}`);
+        let movieInfo =  `<div class="p-2 border d-flex flex-wrap align-content-center bg-light"><br>
+                            <div class="card">
+                              <h5>${response.original_title}</h5>   
+                              <p>Year :${response.release_date}</p>
+                              <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.poster_path}" style="width: 18rem" alt="Card image cap">
+                              <button type="button" class="btn btn-primary" id="favoriteMoveiList">Add To Your Favorite Movie List</button>        
+                              </div>
+                          </div>` 
+           $('#details').html(`${movieInfo}`);
 
-      // }
+      
       } else {
-        $('#results').text(`There was an error handling your request.`);
+        $('#details').text(`There was an error handling your request.`);
       }
     }
    

@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 
-# _Currencey Exchange_
-=======
 # _Movie Selector_
->>>>>>> 38bf5b74ee3a94322c46e2603d8a85b40762cac3
 ## _By: Celeste Field & Chisato Murakami & Joseph Pearce & Nitun Datta_
 ## Description
 

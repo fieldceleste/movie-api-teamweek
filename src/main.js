@@ -61,9 +61,7 @@ function attachMovieListeners() {
       console.log(response.original_title + "  val1");
     })();
 
-    //belongs_to_collection.name
-
-    // https://api.themoviedb.org/3/movie/24428?api_key=ced83ccd2ee66a3e7d710304f25a076f
+    
 
     function getDetails(response) {
       if (response) {

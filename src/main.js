@@ -16,11 +16,11 @@ $(document).ready(function(){
     $("#fMovieList").toggle();
   });
   
-  //add to the favorite list
-  // $("#details").click(function(){
-  //   $("#details").hide();
-  //   //$("#fMovieList").show();
-  // });
+  // add to the favorite list
+  $("#details").click(function(){
+    $("#details").hide();
+    //$("#fMovieList").show();
+  });
   $("#details").on("click", "button",function(){
     $("#details").hide();
     console.log(currentMovie)
@@ -39,7 +39,7 @@ $(document).ready(function(){
     $('#movie').val("");
     
     (async () => {
-      //let movieTitle = new Movies();
+    //  let movieTitle = new Movies();
       const response = await movieObj.getMoviebyTitle(title);
       getElements(response);
     })();
@@ -56,7 +56,9 @@ $(document).ready(function(){
                     <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.results[i].poster_path}" style="width: 7rem" alt="Card image cap">
                   </div></a>
               </div>` 
+             
            $('#results').append(`${htmlInfo}`);
+        
         }
       } else {
         $('#results').text(`There was an error handling your request.`);
@@ -85,8 +87,8 @@ $(document).ready(function(){
       if (response) {
         currentMovie = response;
         console.log(currentMovie);
-        //movieObj.addfavoriteMovieList(response);
-        //showFavoriteMovieList(movieObj);
+        movieObj.addfavoriteMovieList(response);
+        showFavoriteMovieList(movieObj);
         
         let movieInfo =  `<div class="p-2 border d-flex flex-wrap align-content-center bg-light"><br>
                             <div class="card">
@@ -119,5 +121,4 @@ $(document).ready(function(){
           $("#fMovieList").append(movieListInfo);
     });
   }
-
 

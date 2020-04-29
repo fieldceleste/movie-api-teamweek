@@ -19,9 +19,6 @@ export class Movies {
 
 
 
-// `https://api.themoviedb.org/3/search/movie/?${process.env.API_KEY}&query=${title}`);
-
-
 
 
 

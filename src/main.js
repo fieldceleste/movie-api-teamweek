@@ -5,11 +5,8 @@ import $ from 'jquery';
 import { Movies } from './movies-older.js';
 
 
-<<<<<<< HEAD
 let movieObj;
 let currentMovie;
-=======
->>>>>>> 38bf5b74ee3a94322c46e2603d8a85b40762cac3
 $(document).ready(function(){
   movieObj = new Movies();
   attachMovieListeners();
@@ -27,32 +24,18 @@ $(document).ready(function(){
 
 // show movie list
   $('#movie-title').click(function () {
-<<<<<<< HEAD
     $("#details").html("");
     $("#results").html("");
     $("#fMovieList").html("");
     
     $("#results").show();
     
-=======
-=======
-
-$(document).ready(function () {
-  $('#movie-results').click(function () {
-
->>>>>>> 38bf5b74ee3a94322c46e2603d8a85b40762cac3
     let title = $('#movie').val();
     $('#movie').val("");
     
     (async () => {
-<<<<<<< HEAD
       //let movieTitle = new Movies();
       const response = await movieObj.getMoviebyTitle(title);
-=======
-      let movieTitle = new Movies();
-      const response = await movieTitle.getMoviebyTitle(title);
-
->>>>>>> 38bf5b74ee3a94322c46e2603d8a85b40762cac3
       getElements(response);
     })();
 
@@ -70,21 +53,7 @@ $(document).ready(function () {
               </div>` 
              
            $('#results').append(`${htmlInfo}`);
-<<<<<<< HEAD
         
-=======
-
-=======
-      getElements(response, title);
-    })();
-
-    function getElements(response) {
-      if (response) {
-        const respResults = response.results;
-        for (let i = 0; i < respResults.length; i++) {
-          $('#results-title').append(`<li id =${respResults[i].id}> <img src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${respResults[i].poster_path}" alt="Sorry! No image of ${respResults[i].original_title}."> ${respResults[i].original_title} </li>`);
-
->>>>>>> 38bf5b74ee3a94322c46e2603d8a85b40762cac3
         }
       } else {
         $('#results').text(`There was an error handling your request.`);
@@ -92,7 +61,6 @@ $(document).ready(function () {
     }
   });
 });
-<<<<<<< HEAD
   
 //get movie details
   function attachMovieListeners() {
@@ -101,12 +69,6 @@ $(document).ready(function () {
     $("#results").hide();
     $("#fMovieList").hide();
     $("#details").show();
-=======
-
-function attachMovieListeners() {
-   console.log("value2"); 
-  $(".movieList").on("click","span", function(event) {
->>>>>>> 38bf5b74ee3a94322c46e2603d8a85b40762cac3
     event.preventDefault();
     
     (async () => {
@@ -155,9 +117,4 @@ function attachMovieListeners() {
     });
   }
 
-<<<<<<< HEAD
-=======
-//https://api.themoviedb.org/3/movie/${response.results[i].id}
-
->>>>>>> 38bf5b74ee3a94322c46e2603d8a85b40762cac3
 

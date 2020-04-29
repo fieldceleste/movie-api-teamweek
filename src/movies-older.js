@@ -41,8 +41,3 @@ export class Movies {
     return jsonifiedResponse;
   }
 }
-
-
-
-
-

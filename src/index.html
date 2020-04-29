@@ -10,23 +10,26 @@
 </head>
 
 <body>
-
+  
   <div class="contanier-fluid">
+    
     <div class="jumbotron">
-      <h1>Movie Favorites</h1>
+      
+      <h1 class="head"></h1>Movie Favorites    <img src="https://lh3.googleusercontent.com/proxy/_6FVp3F3kluX225nN6aOyE6zoHnCbk60pk2vaw-FXxA_qrFVqDbgVTfhFJ4L71KgNsfIQ4DUGI_qQ9wYVK9ARXRTau28ufy4ozTI3KrVeWDqTp9B7dx1vifFOMiIcWuOy1yJTOffKx-VL3lyQoPW" id= "reel" alt="photo of reel"></h1>
     </div>
 
-    <p>Type in a movie you would like to know about. Then hit the heart to save and watch later!</p>
-
+    <p class= "intro">Search Movies Below:</p>
+<div class='input'>
     <label for="movie" results>Enter a movie name below:</label>
     <input id="movie" type="text">
-    <button class="btn-success" id="movie-title">Submit</button>
-    <!-- <div class="search-msg">
-      <p>About <span></span> results</p>
-    </div> -->
+    <button class="btn-success" id="movie-title">Search</button>
+    <div class="search-msg">
+      <p>About <span id="num-of-results"></span> results:</p>
+    </div>
     <div>
       <a id="showFMovieList" href="#">Favorite movie List</a>
     </div>
+  </div>
     <div id="details"></div>
     <div id="fMovieList"></div>
     <div id="results" class="movieList"></div>

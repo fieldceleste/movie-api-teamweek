@@ -1,20 +1,63 @@
+
 body {
-  background-image:url("https://www.psdgraphics.com/wp-content/uploads/2009/07/theatre-stage.jpg");
+  background-image:url("http://2.bp.blogspot.com/-8OHNXeVlgAY/UEWeW7kAzuI/AAAAAAAADVo/83-Ck2fMx0M/s1600/Red-Curtain-Background.jpg");
+  height:1200px;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position:top 100%;
   justify-content: center;
-  color:white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
   font-size: 20px;
+  color:white;
   margin-left:100px;
+  margin-right:100px;
   font-family: 'Bangers';
  
 }
 
+.jumbotron {
+  background-color:black;
+  text-align: center;
+  font-size: 90px;
+  height:80px;
+  margin-top: 40px;
+ 
+}
+.head{
+  margin-top: -140px;
+}
+#reel{
+  padding-top:50px;
+  padding-left:50px;
+  width:300px;
+  height:300px;
+  transform: rotate(30deg);
+}
+.intro{
+  padding-top: 50px;
+  padding-right:160px;
+  text-align: center;
+  font-size: 30px;
+}
 ul{
   list-style-type:none;
 }
+.input{
+  margin-left: 100px;
+}
+#movie-title{
+  margin-left: 20px;
+  width: 100px;
+  height: 50px;
+}
+
 li{
   padding-top: 8px;
   padding-bottom: 8px;
 }
+
+.search-msg{
+  display: none;
+}
+

@@ -1,14 +1,14 @@
 export class Movies {
 
-  constructor(){
+  constructor() {
     this.favoriteMovieList = [];
   }
-  
-  addfavoriteMovieList(response){
+
+  addfavoriteMovieList(response) {
     this.favoriteMovieList.push(response);
   }
 
-  
+
 
   async getMoviebyTitle(title) {
     let jsonifiedResponse;
@@ -30,7 +30,7 @@ export class Movies {
     let jsonifiedResponse;
     try {
       let response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.api_key}`);
-   
+
       if (response.ok && response.status == 200) {
         jsonifiedResponse = await response.json();
       } else {
@@ -41,17 +41,7 @@ export class Movies {
     }
     return jsonifiedResponse;
   }
-  
-  // displayDetailPage() {
 
-    
-  //   if (htmlInfo === "none") {
-  //     htmlInfo = "block";
-  //   } else {
-  //     htmlInfo = "none";
-  //   }
-  // }
-  
 }
 
 

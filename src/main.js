@@ -16,6 +16,11 @@ $(document).ready(function(){
     $("#fMovieList").toggle();
   });
   
+  //add to the favorite list
+  // $("#details").click(function(){
+  //   $("#details").hide();
+  //   //$("#fMovieList").show();
+  // });
   $("#details").on("click", "button",function(){
     $("#details").hide();
     console.log(currentMovie)
@@ -81,17 +86,50 @@ $(document).ready(function(){
       // let movieInfo;
       if (response) {
         currentMovie = response;
-        console.log(response.original_title + " ----response.original_title");
+        console.log(currentMovie);
         //movieObj.addfavoriteMovieList(response);
         //showFavoriteMovieList(movieObj);
 
-        let movieInfo = `<div class="p-2 border d-flex flex-wrap align-content-center bg-light">
-                <div class="card"><h5>${response.original_title}</h5>   
-                  <p>Year :${response.release_date}</p>
-                  <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.poster_path}" style="width: 18rem" alt="Card image cap"/>
-                  <button type="button" class="btn btn-primary" id="favoriteMoveiList">Add To Your Favorite Movie List</button>        
-                  </div>
-              </div>` 
+
+      //   let movieInfo =  `<div class="card p-2 border d-flex flex-wrap align-content-center bg-light" style="width:25rem;">
+      //   <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.poster_path}" style="width: 25rem" alt="Card image cap"/>
+      //   <div class="card-body">
+      //     <h5 class="card-title">${response.original_title}</h5>
+      //     <p>Year :${response.release_date}</p>
+      //     <p class="card-text">${response.overview}</p>
+      //     <button type="button" class="btn btn-primary" id="favoriteMoveiList">Add To Your Favorite Movie List</button>
+      //   </div>
+      // </div>` 
+
+        
+      
+        let movieInfo =  `<div class="row">
+        <div class="col-sm-3.2">
+          <div class="card">
+            <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.poster_path}" style="width: 18rem" alt="Card image cap"/>
+            <div class="card-body">
+            </div>
+          </div>
+        </div>
+        
+       <div class="col-sm-6">
+          <div class="card">
+          <div class="card">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">${response.original_title}</h5>
+              <p>Year :${response.release_date}</p>
+              <p class="card-text">${response.overview}</p>
+              <button type="button" class="btn btn-primary" id="favoriteMoveiList">Add To Your Favorites</button>
+              <button type="button" class="btn btn-primary" id="favoriteMoveiList">Remove from your Favorites</button>
+              
+            </div>
+            </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>` 
             $('#details').html(`${movieInfo}`);
         } else {
         $('#details').text(`There was an error handling your request.`);

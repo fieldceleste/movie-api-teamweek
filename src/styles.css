@@ -3,7 +3,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 200%;
-  color:white;
+  color: black;
+  /* color:white; */
   font-size: 20px;
   margin-left:100px; 
   margin-right:100px;
@@ -13,9 +14,9 @@ body {
 ul{
   list-style-type:none;
 }
-.jumbotron {
+/* .jumbotron {
 
-}
+} */
 li{
   padding-top: 8px;
   padding-bottom: 8px;

@@ -34,30 +34,4 @@ body {
   height:300px;
   transform: rotate(30deg);
 }
-.intro{
-  padding-top: 50px;
-  padding-right:160px;
-  text-align: center;
-  font-size: 30px;
 }
-ul{
-  list-style-type:none;
-}
-.input{
-  margin-left: 100px;
-}
-#movie-title{
-  margin-left: 20px;
-  width: 100px;
-  height: 50px;
-}
-
-li{
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-
-.search-msg{
-  display: none;
-}
-

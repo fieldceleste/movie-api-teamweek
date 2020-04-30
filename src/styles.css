@@ -22,6 +22,7 @@ body {
   font-size: 90px;
   height:80px;
   margin-top: 40px;
+  margin-left:100px;
  
 }
 .head{
@@ -34,4 +35,25 @@ body {
   height:300px;
   transform: rotate(30deg);
 }
+
+#enter{
+  padding-right:4px;
+}
+
+.card-body{
+  color:black;
+}
+
+.intro{
+  padding-top: 50px;
+  padding-right:160px;
+  text-align: center;
+  font-size: 30px;
+}
+ul{
+  list-style-type:none;
+}
+.input{
+  margin-left: 100px;
+
 }

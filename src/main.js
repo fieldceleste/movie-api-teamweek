@@ -9,7 +9,7 @@ let movieObj;
 let currentMovie;
 $(document).ready(function () {
   movieObj = new Movies();
-  attachMovieListeners();
+  attachMovieListeners(); 
 
   $("#showFMovieList").click(function () {
     showFavoriteMovieList(movieObj);
@@ -18,8 +18,17 @@ $(document).ready(function () {
 
   $("#details").on("click", "button", function () {
     $("#details").hide();
-    console.log(currentMovie)
+  });
+  
+  $("#details").on("click", "label", function () {
+    $("#details").hide();
     movieObj.addfavoriteMovieList(currentMovie);
+  });
+
+
+  $("#result").on("click", "button", function () {
+    $('#results').hide();
+    $("#details").show();
   });
 
 
@@ -45,17 +54,19 @@ $(document).ready(function () {
     function getElements(response) {
       if (response) {
         let htmlInfo;
-        for (let i = 0; i < response.results.length; i++) {
+          for (let i = 0; i < response.results.length; i++) {
+            htmlInfo = `<a id="${response.results[i].id}" href="#">
+                            
+                             <div class="card2">
+                             <h5 class="title-result">${response.results[i].original_title}</h5>   
+                                <img class="card-img-top1" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.results[i].poster_path}" style="width: 9rem" alt="Card image cap">
+                                <p class="year-title">Year :${response.results[i].release_date}</p>
+                             </div>     
+                           
+                        
+                        </a>`
 
-          htmlInfo = `<div class="p-2 border d-flex flex-wrap align-content-center bg-light">
-                  <h5><a id="${response.results[i].id}" href="#">${response.results[i].original_title}</h5>
-                  <div class="card">    
-                    <p>Year :${response.results[i].release_date}</p>
-                    <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.results[i].poster_path}" style="width: 7rem" alt="Card image cap">
-                  </div></a>
-              </div>`
-
-          $('#results').append(`${htmlInfo}`);
+              $('#results').append(`${htmlInfo}`);
 
         }
       } else {
@@ -67,7 +78,8 @@ $(document).ready(function () {
 
 function attachMovieListeners() {
 
-  $(".movieList").on("click", "a", function (event) {
+  $("#results").on("click", "a", function (event) {
+    //$(".movieList").hide();
     $("#results").hide();
     $("#fMovieList").hide();
     $("#details").show();
@@ -78,40 +90,34 @@ function attachMovieListeners() {
       getDetails(response);
     })();
 
-
     function getDetails(response) {
       if (response) {
         currentMovie = response;
+        let movieInfo="";
         console.log(currentMovie);
-        // movieObj.addfavoriteMovieList(response);  ///----------?
-        // showFavoriteMovieList(movieObj);
 
-
-
-        let movieInfo = `<div class="row">
+        movieInfo += `<div class="row">
         <div class="col-sm-3.2">
-          <div class="card">
-            <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.poster_path}" style="width: 18rem" alt="Card image cap"/>
+          <div class="card-image">
+            <img class="card-img-top" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2${response.backdrop_path}" style = "width: 25rem" alt="Card image cap"/>
             <div class="card-body">
             </div>
           </div>
         </div>
         
-       <div class="col-sm-6">
-          <div class="card">
-            <div class="card">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">${response.original_title}</h5>
-                  <p>Year :${response.release_date}</p>
-                  <p class="card-text">${response.overview}</p>
-                  <button type="button" class="btn btn-primary" id="favoriteMoveiList">Add To Your Favorites</button>
-                  <button type="button" class="btn btn-primary" id="favoriteMoveiList">Remove from your Favorites</button>
-                </div>
-              </div>
+        <div class="col-sm-6">
+          <div class="card card1">
+            <div class="card-body">
+              <h5 class="card-title">${response.original_title}</h5>
+              <p id="text-year">Year :${response.release_date}</p>
+              <p class="card-text">${response.overview}</p>
+              <input id="favoriteMovieList toggle-heart" type="checkbox" />
+              <label for="favoriteMovieList toggle-heart">❤</label>
+              <button type="button" class="btn btn-primary" id="backToList">Back</button>
+              
             </div>
           </div>
-        </div>
+        </div> 
       </div>`
         $('#details').html(`${movieInfo}`);
       } else {
@@ -125,18 +131,31 @@ function showFavoriteMovieList(movieObj) {
   let movieListInfo = "";
   movieObj.favoriteMovieList.forEach(function (movie) {
 
-    movieListInfo = `<div class="p-2 border d-flex flex-wrap align-content-center bg-light"><br>
-              <div class="card">
-                <h3> Favorite Movie List</h3>
-                <h5>${movie.original_title}</h5>   
-                <p>Year :${movie.release_date}</p>
-                <img class="card-img-top" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${movie.poster_path}" style="width: 18rem" alt="Card image cap">
-              </div>
-            </div>`
-    $("#fMovieList").append(movieListInfo);
+    movieListInfo += `<div class="row">
+    <div class="col-sm-3.2">
+      <div class="card-image">
+        <img class="card-img-top" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie.backdrop_path}"style="width: 25rem" alt="Card image cap"/>
+      </div>
+    </div>
+    
+    <div class="col-sm-6">
+      <div class="card card1">
+        <div class="card-body">
+          <h5 class="card-title">${movie.original_title}</h5>
+          <p id="text-year">Year :${movie.release_date}</p>
+          <p class="card-text">${movie.overview}</p>
+         
+        </div>
+      </div>
+    </div>
+  </div>`
+    $("#fMovieList").html(movieListInfo);
   });
 }
-  
-  
-  
-  
+
+
+
+
+
+{/* <button type="button" class="heart" id="favoriteMoveiList">Add To Your Favorites</button> */ }
+

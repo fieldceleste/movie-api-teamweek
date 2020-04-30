@@ -10,30 +10,32 @@
 </head>
 
 <body>
-
+  
   <div class="contanier-fluid">
     <div class="jumbotron">
       <h1 class="head"></h1>Movie Favorites <img
-        src="https://lh3.googleusercontent.com/proxy/_6FVp3F3kluX225nN6aOyE6zoHnCbk60pk2vaw-FXxA_qrFVqDbgVTfhFJ4L71KgNsfIQ4DUGI_qQ9wYVK9ARXRTau28ufy4ozTI3KrVeWDqTp9B7dx1vifFOMiIcWuOy1yJTOffKx-VL3lyQoPW"
-        id="reel" alt="photo of reel"></h1>
+        src="https://cdn.clipart.email/6465c210b46467616994835c8da378e4_movie-reel-film-reel-clip-art-image-2-clipartix_1600-2373.png"
+        id="reel" alt="photo of reel">
+      </h1>
+    </div>
+    <div class='input'>
+      <p class="intro"><strong>Search Your Favorite Movies Below:</strong></p>
+      <!-- <label for="movie" id="enter" results></label> -->
+      <input id="movie" type="text">
+      <button class="btn-success" id="movie-title">Search</button>
     </div>
 
-    <p class="intro">Search Movies Below:</p>
-    <div class='input'>
-      <label for="movie" id="enter" results>Enter a movie name below:</label>
-      <input id="movie" type="text">
-      <button class="btn-success" id="movie-title">Submit</button>
-    </div>
     <div class="search-msg">
-        <p>About <span id="num-of-results"></span> results:</p>
+      <p>About <span id="num-of-results"></span> results:</p>
     </div>
     <div>
-       <button id="showFMovieList" class="btn btn-primary"  type="button">Favorite movie List</button>
-       <!-- <a id="showFMovieList" href="#">Favorite movie List</a> -->
+      <button id="showFMovieList" class="btn btn-primary" type="button">Favorite Movie List</button>
+      <!-- <a id="showFMovieList" href="#">Favorite movie List</a> -->
     </div>
     <div id="details"></div>
     <div id="fMovieList"></div>
-    <div id="results" class="movieList"></div>
+    <div id="results" class="movieList p-2 d-flex flex-wrap align-content-center movieList"></div>
+
 
   </div>
 </body>

@@ -1,59 +1,182 @@
-
 body {
-  background-image:url("http://2.bp.blogspot.com/-8OHNXeVlgAY/UEWeW7kAzuI/AAAAAAAADVo/83-Ck2fMx0M/s1600/Red-Curtain-Background.jpg");
-  height:1200px;
-  background-repeat: no-repeat;
+  background-image: url("http://2.bp.blogspot.com/-8OHNXeVlgAY/UEWeW7kAzuI/AAAAAAAADVo/83-Ck2fMx0M/s1600/Red-Curtain-Background.jpg");
+  height: 1600px;
   justify-content: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
   font-size: 20px;
-  color:white;
-  margin-left:100px;
-  margin-right:100px;
+  color: white;
+  margin-left: 100px;
+  margin-right: 100px;
   font-family: 'Bangers';
- 
 }
 
 .jumbotron {
-  background-color:black;
+  background-color: black;
   text-align: center;
   font-size: 90px;
-  height:80px;
+  width: 1000px;
+  height: 30px;
   margin-top: 40px;
-  margin-left:100px;
- 
+  margin-left: 100px;
 }
-.head{
+
+.head {
   margin-top: -140px;
 }
-#reel{
-  padding-top:50px;
-  padding-left:50px;
-  width:300px;
-  height:300px;
-  transform: rotate(30deg);
-}
 
-#enter{
-  padding-right:4px;
-}
-
-.card-body{
-  color:black;
-}
-
-.intro{
+#reel {
   padding-top: 50px;
-  padding-right:160px;
+  padding-left: 60px;
+  width: 300px;
+  height: 300px;
+  transform: rotate(350deg);
+
+}
+
+.card1 {
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.intro {
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+.input {
+  margin-left: 300px;
+  padding-top: 40px;
+  font-size: 25px;
   text-align: center;
+  border: black dashed 3px;
+  width: 500px;
+  height: 200px;
+}
+
+.search-msg {
+  margin-left: 400px;
+}
+
+#fMovieList {
+  color: black;
+}
+
+#movie-title {
+  width: 200px;
+}
+
+#showFMovieList {
+  width: 200px;
+}
+
+.bg-black {
+  width: 450px;
+  margin-left: 325px;
+  background-color: black;
+  border-radius: 20px;
+  padding-bottom: 50px;
+}
+
+.card-img-top {
+  padding-top: 15%;
+  padding-left: 15%;
+  height: 600px;
+  width: 600px;
+  
+}
+
+.card-img-top1 {
+  padding-top: 20px;
+  background-color: black;
+  margin-left: 80px;
+  margin-right: 80px;
+  width:100px;
+  height:220px;
+}
+.card-text{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.card2 {
+  background-color: black;
+  margin-top: 4px;
+  padding: -20px;
+}
+.card-title{
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 30px;
 }
-ul{
-  list-style-type:none;
+#text-year{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-right: 100px;
 }
-.input{
-  margin-left: 100px;
 
+h5 {
+  margin: auto;
+}
+
+.col-sm-6 {
+  margin-top: 5%;
+  padding-left: 5%;
+}
+
+.title-result {
+  font-size: 30px;
+  color: whitesmoke;
+  padding-top: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.year-title {
+  color: rgb(165, 159, 159);
+  font-size: 20px;
+  margin-left: 100px;
+  padding-bottom: 20px;
+}
+
+#results {
+  display: none;
+  justify-content: center;
+  display: flex;
+}
+a{
+  height: 360.98;
+}
+
+/* /////---------------------------------------------Heart animation */
+
+[id='favoriteMovieList toggle-heart'] {
+  position: absolute;
+  left: -100vw;
+}
+
+[for='favoriteMovieList toggle-heart'] {
+  color: #aab8c2;
+}
+
+[id='favoriteMovieList toggle-heart']:checked+label {
+  color: #e2264d;
+}
+
+[for='favoriteMovieList toggle-heart'] {
+  font-size: 2em;
+  cursor: pointer;
+}
+
+@keyframes heart {
+  0%, 17.5% {
+    font-size: 0;
+  }
+}
+
+[id='favoriteMovieList toggle-heart']:checked+label {
+  will-change: font-size;
+  animation: heart 1s cubic-bezier(.17, .89, .32, 1.49);
 }

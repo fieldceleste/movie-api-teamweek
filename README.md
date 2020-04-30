@@ -44,34 +44,21 @@ _No known bugs at this time_
 ## Specs
 
 
-| **spec 1: Search input and button(click or submit?) input should be string**| √
-| **spec 2: Search　by title only to start up?** | √
-| **spec 3: Shows the related results the user searched (use API) ,lists only title in a new div or box**|√
-
+| **spec 1: Search input and button(click or submit?) input should be string**| 
+| **spec 2: Search　by title only to start up?** | 
+| **spec 3: Shows the related results the user searched (use API) ,lists only title in a new div or box**|
 | **spec 4: When the user clicks the title of the movie its shows the movie detail page ⬇️** |
 | **spec 4b: The detail page will show title, image & overview  ⬇️** |
 | **spec 5: On the movie detail page user saves Movie as favorite (another button to save)** |
-| **spec 5b: On the movie detail page user removes Movie as favorite** |
-| **spec 6: div or box to list saved Movies** |
-
-
-// this is similiar but with "older movies" - could be the same
-| **spec 8: The website/app provides older Movie status.(streaming) (use API)** |√
-
-| **spec 9: The website/app provides Movie images using API** |√
-| **spec 10: When the user hit submit button it shows the list with images.** |√
-| **spec 11: age title, or image  should be clickab to display the detail** |
-
-
-
-
-| **spec 12: Recommendation engine (based on Genre & Ratings)"** |
-
-| **spec 13: go back to search button?**|
-extra specs
-| **search button filtered by genres (comedy, drama, suspense...), cast () ...** |
-
-
+| **spec 6: go back to search button**|
+| **spec 7: On the movie detail page user removes Movie as favorite** |
+| **spec 8: div or box to list saved Movies** |
+| **spec 9: The website/app provides older Movie status.(streaming) (use API)** |
+| **spec 10: The website/app provides Movie images using API** |
+| **spec 11: When the user hit submit button it shows the list with images.** |
+| **spec 12: Released date, title, or image should be clickabe to display the detail** |
+| **spec 13: Recommendation engine (based on Genre & Ratings)"** |
+| **(extra spec)Ssearch button filtered by genres (comedy, drama, suspense...), cast () ...** |
 
 ## Legal
 

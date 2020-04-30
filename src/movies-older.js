@@ -23,7 +23,6 @@ export class Movies {
     return jsonifiedResponse;
   }
 
-
   async displayDetailPage(id) {
     let jsonifiedResponse;
     try {

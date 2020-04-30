@@ -4,7 +4,6 @@ import './styles.css';
 import $ from 'jquery';
 import { Movies } from './movies-older.js';
 
-
 let movieObj;
 let currentMovie;
 $(document).ready(function () {
@@ -18,6 +17,7 @@ $(document).ready(function () {
 
   $("#details").on("click", "button", function () {
     $("#details").hide();
+    $('#results').hide();
   });
   
   $("#details").on("click", "label", function () {
@@ -25,18 +25,16 @@ $(document).ready(function () {
     movieObj.addfavoriteMovieList(currentMovie);
   });
 
-
-  $("#result").on("click", "button", function () {
+  $("#details").on("click", "a", function () {
     $('#results').hide();
     $("#details").show();
   });
 
-
   $('#movie-title').click(function () {
+    $(".search-msg").show();
     $("#details").html("");
     $("#results").html("");
     $("#fMovieList").html("");
-    $(".search-msg").show();
     $("#results").show();
 
     let title = $('#movie').val();
@@ -55,19 +53,14 @@ $(document).ready(function () {
       if (response) {
         let htmlInfo;
           for (let i = 0; i < response.results.length; i++) {
-            htmlInfo = `<a id="${response.results[i].id}" href="#">
-                            
+            htmlInfo = `<a id="${response.results[i].id}" href="#">                        
                              <div class="card2">
                              <h5 class="title-result">${response.results[i].original_title}</h5>   
                                 <img class="card-img-top1" src="https://image.tmdb.org/t/p/w94_and_h141_bestv2${response.results[i].poster_path}" style="width: 9rem" alt="Card image cap">
                                 <p class="year-title">Year :${response.results[i].release_date}</p>
                              </div>     
-                           
-                        
                         </a>`
-
               $('#results').append(`${htmlInfo}`);
-
         }
       } else {
         $('#results').text(`There was an error handling your request.`);
@@ -79,7 +72,6 @@ $(document).ready(function () {
 function attachMovieListeners() {
 
   $("#results").on("click", "a", function (event) {
-    //$(".movieList").hide();
     $("#results").hide();
     $("#fMovieList").hide();
     $("#details").show();
@@ -113,8 +105,7 @@ function attachMovieListeners() {
               <p class="card-text">${response.overview}</p>
               <input id="favoriteMovieList toggle-heart" type="checkbox" />
               <label for="favoriteMovieList toggle-heart">❤</label>
-              <button type="button" class="btn btn-primary" id="backToList">Back</button>
-              
+              <button type="button" class="btn btn-primary" id="backToList">Back</button>          
             </div>
           </div>
         </div> 
@@ -130,7 +121,6 @@ function attachMovieListeners() {
 function showFavoriteMovieList(movieObj) {
   let movieListInfo = "";
   movieObj.favoriteMovieList.forEach(function (movie) {
-
     movieListInfo += `<div class="row">
     <div class="col-sm-3.2">
       <div class="card-image">
@@ -143,8 +133,7 @@ function showFavoriteMovieList(movieObj) {
         <div class="card-body">
           <h5 class="card-title">${movie.original_title}</h5>
           <p id="text-year">Year :${movie.release_date}</p>
-          <p class="card-text">${movie.overview}</p>
-         
+          <p class="card-text">${movie.overview}</p>      
         </div>
       </div>
     </div>
@@ -152,10 +141,6 @@ function showFavoriteMovieList(movieObj) {
     $("#fMovieList").html(movieListInfo);
   });
 }
-
-
-
-
 
 {/* <button type="button" class="heart" id="favoriteMoveiList">Add To Your Favorites</button> */ }
 

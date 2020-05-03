@@ -40,6 +40,7 @@ body {
 
 .card1 {
   color: black;
+  margin-left:200px;
 }
 
 ul {
@@ -101,13 +102,16 @@ ul {
   /* justify-content: center; */
   padding-top: 20px;
   background-color: black;
-  margin-left: 80px;
+  margin-left: 100px;
   margin-right: 80px;
   width:200px;
   height:220px;
 }
 .card-text{
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.card-image{
+  margin-left: 130px;
 }
 
 .card2 {
@@ -118,9 +122,11 @@ ul {
   height:400px;
 
 }
+
 .card-title{
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 30px;
+  font-size: 25px;
+  text-align: center;
 }
 #text-year{
   font-family: Georgia, 'Times New Roman', Times, serif;

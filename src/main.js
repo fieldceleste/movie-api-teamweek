@@ -89,7 +89,7 @@ function attachMovieListeners() {
         console.log(currentMovie);
 
         movieInfo += `<div class="row">
-        <div class="col-sm-3.2">
+        <div class="col-md-2">
           <div class="card-image">
             <img class="card-img-top" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2${response.backdrop_path}" style = "width: 25rem" alt="Card image cap"/>
             <div class="card-body">
@@ -122,7 +122,7 @@ function showFavoriteMovieList(movieObj) {
   let movieListInfo = "";
   movieObj.favoriteMovieList.forEach(function (movie) {
     movieListInfo += `<div class="row">
-    <div class="col-sm-3.2">
+    <div class="col-md-2">
       <div class="card-image">
         <img class="card-img-top" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie.backdrop_path}"style="width: 25rem" alt="Card image cap"/>
       </div>

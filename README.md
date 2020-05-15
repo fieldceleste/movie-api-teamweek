@@ -1,13 +1,10 @@
-# _Movie selector_
+# _Movie Favorites_
 ## _By: Celeste Field & Chisato Murakami & Joseph Pearce & Nitun Datta_
 ## Description
 
 _A website that allows the user to save their favorite TV shows or Movies._
 
-
-
-## setup
-
+## Setup
 
 * _Clone repository from Github: https://github.com/fieldceleste/movie-api-teamweek.git_
 * _Open the repository folder in the terminal_
@@ -55,7 +52,7 @@ _No known bugs at this time_
 | **spec 10: When the user hit submit button it shows the list with images.** |√
 | **spec 11: Age title, or image  should be clickab to display the detail** |√
 | **spec 12: Recommendation engine (based on Genre & Ratings)"** |
-| **spec 13: go back to search button?**|√
+| **spec 13: Go back to search button?**|√
 extra specs
 | **search button filtered by genres (comedy, drama, suspense...), cast () ...** |
 

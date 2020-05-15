@@ -40,21 +40,21 @@ _No known bugs at this time_
 ## Specs
 
 |   Specs   |   
-| :------------- |
-| **spec 1: Search input and button(click or submit?) input should be string**| √
-| **spec 2: Search　by title only to start up?** | √
-| **spec 3: Shows the related results the user searched (use API) ,lists only title in a new div or box**|√
-| **spec 4: When the user clicks the title of the movie its shows the movie detail page ⬇️** |√
-| **spec 5: On the movie detail page user saves Movie as favorite (another button to save)** |√
-| **spec 6: Div or box to list saved Movies** |√
-| **spec 8: The website/app provides older Movie status.(streaming) (use API)** |√
-| **spec 9: The website/app provides Movie images useing API** |√
-| **spec 10: When the user hit submit button it shows the list with images.** |√
-| **spec 11: Age title, or image  should be clickab to display the detail** |√
-| **spec 12: Recommendation engine (based on Genre & Ratings)"** |
-| **spec 13: Go back to search button?**|√
+--------------
+* [**spec 1: Search input and button(click or submit?) input should be string**] [√]
+* [**spec 2: Search　by title only to start up?** ] [√]
+* [**spec 3: Shows the related results the user searched (use API) ,lists only title in a new div or box**] [√]
+* [**spec 4: When the user clicks the title of the movie its shows the movie detail page ⬇️** ] [√]
+* [**spec 5: On the movie detail page user saves Movie as favorite (another button to save)** ] [√]
+* [**spec 6: Div or box to list saved Movies** ] [√]
+* [**spec 8: The website/app provides older Movie status.(streaming) (use API)**] [√]
+* [**spec 9: The website/app provides Movie images useing API** ] [√]
+* [**spec 10: When the user hit submit button it shows the list with images.**] [√]
+* [**spec 11: Age title, or image  should be clickab to display the detail**] [√]
+* [**spec 12: Recommendation engine (based on Genre & Ratings)"**]
+* [**spec 13: Go back to search button?**] [√]
 extra specs
-| **search button filtered by genres (comedy, drama, suspense...), cast () ...** |
+* [**search button filtered by genres (comedy, drama, suspense...), cast () ...**]
 
 
 

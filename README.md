@@ -12,12 +12,12 @@ _A website that allows the user to save their favorite TV shows or Movies._
 * _Clone repository from Github: https://github.com/fieldceleste/movie-api-teamweek.git_
 * _Open the repository folder in the terminal_
 * _Enter $ npm install - this will allow you to install all of the packages in this project._
-* _Make sure you intitialize GIT, and delete the exsiting .git file by running in the terminal $rm -rf .git. 
-* _Be sure to check your .gitignore folder to include the correct files to ignore for this project. 
-* _Now that you have everything ready, you can run git init. 
+* _Make sure you intitialize GIT, and delete the exsiting .git file by running in the terminal $rm -rf .git._ 
+* _Be sure to check your .gitignore folder to include the correct files to ignore for this project._
+* _Now that you have everything ready, you can run git init._
 * _Open in editor (i.e. Visual studio Code) and create your own repo._
 * _Enter $ npm run start to run your local server and display your page._
-* _As well, you can create a gh-pages to diplay your site or use the live server extension on Visual Code studio.
+* _As well, you can create a gh-pages to diplay your site or use the live server extension on Visual Code studio._
 
 ## Known Bugs
 _No known bugs at this time_

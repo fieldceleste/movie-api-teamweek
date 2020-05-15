@@ -54,8 +54,7 @@ _No known bugs at this time_
 * [**spec 12: Recommendation engine (based on Genre & Ratings)"**]
 * [**spec 13: Go back to search button?**] [√]
 extra specs
-* [**search button filtered by genres (comedy, drama, suspense...), cast () ...**]
-
+* [**search button filtered by genres (comedy, drama, suspense...), cast () ...**]   
 
 
 ## Legal
